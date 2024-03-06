@@ -1,15 +1,20 @@
 import React,{useEffect, useState} from 'react';
 import {Button} from '@mui/material';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import Card from './Card';
 
 
 function Game(){
     const { gameCode } = useParams();
     const [cards, setCards] = useState([]);
+    const navigate = useNavigate();
 
     const handleAddCard = () => {
         setCards([...cards, { id: cards.length + 1 }]);
+    }
+
+    const handleBackToLobby = () => {
+        navigate('/');
     }
 
     return(
@@ -19,9 +24,18 @@ function Game(){
         variant="contained" 
         color="primary" 
         onClick={handleAddCard}
-        style={{ margin: '10px' }}>
+        style={{ margin: '10px' , width: '150px'}}>
         ADD CARD
       </Button>
+      <Button
+                className='Back-to-lobby'
+                variant="contained"
+                color="primary"
+                onClick={handleBackToLobby}
+                style={{ margin: '10px' , width: '150px', backgroundColor: 'gray', color: 'white' }}
+            >
+                BACK TO LOBBY
+            </Button>
         <div className='CARDS'>
             {cards.map((card, index) => (
                 <div key={index} className='CARD'>

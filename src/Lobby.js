@@ -25,6 +25,7 @@ function Lobby(){
 
     return (
         <div className="Lobby">
+            <h1>E-BINGO</h1>
             <TextField
                 id="outlined-basic"
                 label="Game Code"
@@ -37,7 +38,7 @@ function Lobby(){
             <div><Button className='Join-button' 
             variant="contained" 
             color="primary" 
-            style={{ margin: '10px' }}
+            style={{ margin: '20px' }}
             onClick={handleJoinGame}>JOIN GAME</Button></div>
         </div>
     );

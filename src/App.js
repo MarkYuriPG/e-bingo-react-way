@@ -1,10 +1,7 @@
 import './App.css';
-import GameBoard from './GameBoard';  
-import Card from './Card';
-import React, {useState} from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Lobby from './Lobby';
-import { Button } from '@mui/material';
 import Game from './Game';
 
 function App() {
